@@ -11,18 +11,23 @@ app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
 app.use(mainplug);
-app.use("/", mainplug);
+
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/datas", {
+  .connect(process.env.mongoURL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   })
   .then(() => {
+    console.log("Connected to MongoDB");
+    // Start the server
+    const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
-      console.log('Server is listening on port ' + PORT);
+      console.log("Server is listening on port " + PORT);
     });
   })
-  .catch(error => {
+  .catch((error) => {
     console.error("Failed to connect to MongoDB:", error);
+    // Terminate the application on database connection error
+    process.exit(1);
   });

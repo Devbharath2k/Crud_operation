@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const schema = require("../module/schema.js");
 
 const createTask = async (req, res) => {
-  const { fname, lname, email, phone, passwd, passwd1 } = req.body;
+  const { fname, lname, email, phone, passwd } = req.body;
 
   try {
     const task = await schema.create({ fname, lname, email, phone, passwd,  });

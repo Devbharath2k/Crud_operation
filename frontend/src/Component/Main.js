@@ -7,7 +7,7 @@ function Main() {
 
   const handleAxios = () => {
     axios
-      .get("http://localhost:5000/api/get")
+      .get("api/get")
       .then(res => {
         console.log(res.data.data);
         setValues(res.data.data);

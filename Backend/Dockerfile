@@ -1,5 +1,5 @@
 # Use a specific version of Node.js as the base image
-FROM node:21-alpine
+FROM node
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -10,7 +10,7 @@ COPY package*.json ./
 # Install npm dependencies
 RUN npm install
 
-# Copy the rest of the application code
+# Copy the rest of the application code 
 COPY . .
 
 # Expose the port that the app runs on

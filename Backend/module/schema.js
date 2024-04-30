@@ -21,7 +21,7 @@ const blogSchema = new Schema({
   },
   passwd: {
     type: String,
-    required: true
+    
   },
  
 });

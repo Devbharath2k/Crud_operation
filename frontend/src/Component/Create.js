@@ -16,7 +16,7 @@ function Create() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("api/post", value)
+      .post("/api/post", value)
       .then(res => {
         console.log(res.data.data);
         setValue(res.data.data);

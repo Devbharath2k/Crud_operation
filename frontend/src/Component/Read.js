@@ -12,7 +12,7 @@ function Read() {
 
   const handleAxios = () => {
     axios
-      .get(`api/${id}`)
+      .get(`/api/${id}`)
       .then(res => {
         console.log(res.data.data);
         setValues(res.data.data);

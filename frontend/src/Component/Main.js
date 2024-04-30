@@ -7,7 +7,7 @@ function Main() {
 
   const handleAxios = () => {
     axios
-      .get("api/get")
+      .get("/api/get")
       .then(res => {
         console.log(res.data.data);
         setValues(res.data.data);

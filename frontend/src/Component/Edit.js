@@ -17,7 +17,7 @@ function Edit() {
 
   useEffect(() => {
     axios
-      .get(`api/${id}`)
+      .get(`http://localhost:5000/api/${id}`)
       .then((res) => {
         setValues(res.data.data);
       })
@@ -29,7 +29,7 @@ function Edit() {
   const handleUpdate = (event) => {
     event.preventDefault();
     axios
-      .put(`api/${id}`, value)
+      .put(`http://localhost:5000/api/${id}`, value)
       .then((res) => {
         console.log(res.data.data);
         navigate('/');
